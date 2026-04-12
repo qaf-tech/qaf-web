@@ -19,6 +19,12 @@ export type WsMessageType =
   | "chat:agent_event"
   | "agent.parse_intent"
   | "agent.execute_purchase"
+  | "identity.verify"
+  | "identity.verify:response"
+  | "identity.mint_credential"
+  | "identity.mint_credential:response"
+  | "identity.verify_proof"
+  | "identity.verify_proof:response"
   | "system:connected"
   | "system:error";
 
