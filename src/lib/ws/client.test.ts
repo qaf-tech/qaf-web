@@ -152,6 +152,7 @@ describe("createWsClient", () => {
       // timer handle and invokes connect() again.
       const cb = pendingCb;
       pendingCb = null;
+      // @ts-expect-error — pre-existing test scaffolding, pendingCb narrows to never under reassignment analysis
       cb?.();
     }
 
