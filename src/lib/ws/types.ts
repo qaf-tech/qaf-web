@@ -3,6 +3,9 @@ export type WsMessageType =
   | "wallet:transaction"
   | "chat:message"
   | "chat:typing"
+  | "chat:agent_event"
+  | "agent.parse_intent"
+  | "agent.execute_purchase"
   | "system:connected"
   | "system:error";
 
