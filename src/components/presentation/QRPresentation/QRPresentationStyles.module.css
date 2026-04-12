@@ -1,0 +1,42 @@
+.container {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin: 0 auto;
+  max-width: 30rem;
+}
+
+.qrImage {
+  width: 100%;
+  max-width: 28rem;
+  max-height: 28rem;
+  aspect-ratio: 1;
+  display: block;
+}
+
+.skeleton {
+  width: 100%;
+  max-width: 28rem;
+  max-height: 28rem;
+  aspect-ratio: 1;
+  display: block;
+  background: var(--glass-border);
+  border-radius: var(--radius-md);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}

@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  color: var(--color-text);
+}
+
+.iconActive {
+  composes: icon;
+  animation: nfcPulse 2s ease-in-out infinite;
+}
+
+.iconInactive {
+  composes: icon;
+  opacity: 0.3;
+  animation: none;
+}
+
+@keyframes nfcPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.6;
+  }
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconActive {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}

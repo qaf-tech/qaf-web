@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg {
+  width: 8rem;
+  height: 8rem;
+}
+
+.track {
+  stroke: var(--glass-border);
+  fill: none;
+  stroke-width: 3;
+}
+
+.progress {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition:
+    stroke-dashoffset var(--transition-normal),
+    stroke var(--transition-normal);
+}
+
+.progressNormal {
+  stroke: var(--color-primary);
+}
+
+.progressWarning {
+  stroke: var(--color-warning);
+}
+
+.progressDanger {
+  stroke: var(--color-error);
+}
+
+.seconds {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  fill: var(--color-text);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.label {
+  font-size: var(--font-size-xs);
+  fill: var(--color-text-secondary);
+  text-anchor: middle;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress {
+    transition: none;
+  }
+}
