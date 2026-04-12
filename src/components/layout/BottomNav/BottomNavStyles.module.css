@@ -1,0 +1,49 @@
+.bottomNav {
+  composes: surface from "@/styles/glass.module.css";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  padding: var(--space-sm) var(--space-md);
+  padding-bottom: calc(var(--space-sm) + env(safe-area-inset-bottom, 0rem));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  padding: var(--space-xs);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast);
+}
+
+.navItem:hover {
+  color: var(--color-text);
+}
+
+.navItemActive {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+@media (min-width: 62em) {
+  .bottomNav {
+    display: none;
+  }
+}
