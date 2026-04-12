@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: var(--space-2xl);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 40rem;
+  padding: var(--space-2xl);
+  text-align: center;
+}
+
+.heading {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subheading {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 32rem;
+}
+
+.ctaButton {
+  width: 100%;
+  padding: var(--space-md) var(--space-xl);
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--transition-normal),
+    transform var(--transition-fast);
+}
+
+.ctaButton:hover {
+  filter: brightness(1.1);
+}
+
+.ctaButton:active {
+  transform: scale(0.98);
+}
+
+.secondaryLink {
+  margin-top: var(--space-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+.secondaryLink:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctaButton {
+    transition: none;
+  }
+  .ctaButton:active {
+    transform: none;
+  }
+}
