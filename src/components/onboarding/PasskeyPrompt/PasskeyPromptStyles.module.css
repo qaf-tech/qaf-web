@@ -1,0 +1,119 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: var(--space-2xl);
+}
+
+.card {
+  max-width: 40rem;
+  width: 100%;
+  padding: var(--space-2xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.iconContainer {
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.iconError {
+  color: var(--color-error);
+}
+
+.iconContainer svg {
+  width: 100%;
+  height: 100%;
+}
+
+.statusText {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.errorText {
+  font-size: var(--font-size-md);
+  color: var(--color-error);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.retryButton {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition:
+    background var(--transition-normal),
+    transform var(--transition-fast);
+}
+
+.retryButton:hover {
+  filter: brightness(1.1);
+}
+
+.retryButton:active {
+  transform: scale(0.98);
+}
+
+.pulseAnimation {
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.spinAnimation {
+  animation: spin 1.2s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.92);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulseAnimation,
+  .spinAnimation {
+    animation: none;
+  }
+
+  .retryButton {
+    transition: none;
+  }
+
+  .retryButton:active {
+    transform: none;
+  }
+}

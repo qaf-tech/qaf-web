@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: var(--space-2xl);
+}
+
+.card {
+  max-width: 40rem;
+  width: 100%;
+  padding: var(--space-2xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.successIcon {
+  width: 6.4rem;
+  height: 6.4rem;
+  color: var(--color-success);
+}
+
+.successIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.heading {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.addressContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  width: 100%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.addressText {
+  font-family: var(--font-family-mono, ui-monospace, "SF Mono", monospace);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copyButton {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border, var(--glass-border));
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.copyButton:hover {
+  background: var(--glass-bg);
+}
+
+.copiedText {
+  color: var(--color-success);
+  font-size: var(--font-size-xs);
+  margin: 0;
+}
+
+.continueButton {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition:
+    background var(--transition-normal),
+    transform var(--transition-fast);
+}
+
+.continueButton:hover {
+  filter: brightness(1.1);
+}
+
+.continueButton:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .continueButton,
+  .copyButton {
+    transition: none;
+  }
+
+  .continueButton:active {
+    transform: none;
+  }
+}
