@@ -1,0 +1,87 @@
+.toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-toast);
+  width: 90%;
+  max-width: 40rem;
+  animation: slideDown var(--transition-normal) ease-out;
+}
+
+.index0 {
+  top: var(--space-md);
+}
+
+.index1 {
+  top: calc(var(--space-md) + 8rem);
+}
+
+.index2 {
+  top: calc(var(--space-md) + 16rem);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -4rem);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+}
+
+.icon {
+  font-size: var(--font-size-lg);
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.message {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.delayBadge {
+  background: var(--color-warning);
+  color: var(--color-text);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.dismissButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  padding: var(--space-xs);
+  font-size: var(--font-size-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+}
