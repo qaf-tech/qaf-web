@@ -1,17 +1,16 @@
 "use client";
 
-import { AccessLogList } from "@/components/privacy/AccessLogList";
-import { useAccessLog } from "@/hooks/useAccessLog";
+import { NotificationFeed } from "@/components/notifications/NotificationFeed";
+import { useNotifications } from "@/hooks/useNotifications";
 import glass from "@/styles/glass.module.css";
-import styles from "./privacyPage.module.css";
+import styles from "./notificationsPage.module.css";
 
-export default function PrivacyPage(): React.JSX.Element {
-  const { entries, isLoading, error, revokeAccess, revokingIds } =
-    useAccessLog();
+export default function NotificationsPage(): React.JSX.Element {
+  const { notifications, isLoading, error, markAsRead } = useNotifications();
 
   return (
     <div className={styles.page}>
-      <h1 className={styles.title}>Privacy &amp; Access Log</h1>
+      <h1 className={styles.title}>Notifications</h1>
 
       {isLoading ? (
         <>
@@ -21,20 +20,19 @@ export default function PrivacyPage(): React.JSX.Element {
         </>
       ) : error ? (
         <div className={`${glass.surface} ${styles.error}`} role="alert">
-          <p>{error}</p>
+          {error}
         </div>
-      ) : entries.length === 0 ? (
+      ) : notifications.length === 0 ? (
         <div className={`${glass.surface} ${styles.emptyState}`}>
           <span className={styles.emptyIcon} aria-hidden="true">
-            🛡️
+            🔔
           </span>
-          <p className={styles.emptyText}>No credential access recorded yet.</p>
+          <p className={styles.emptyText}>No notifications yet.</p>
         </div>
       ) : (
-        <AccessLogList
-          entries={entries}
-          onRevoke={revokeAccess}
-          revokingIds={revokingIds}
+        <NotificationFeed
+          notifications={notifications}
+          onMarkRead={markAsRead}
         />
       )}
     </div>
