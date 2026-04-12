@@ -14,10 +14,18 @@
     "indentStyle": "space",
     "indentWidth": 2
   },
+  "css": {
+    "parser": {
+      "cssModules": true
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "suspicious": {
+        "noDuplicateProperties": "off"
+      }
     },
     "domains": {
       "next": "recommended",
