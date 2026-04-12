@@ -1,0 +1,11 @@
+.main {
+  flex: 1;
+  padding: var(--space-md);
+  padding-bottom: calc(var(--space-2xl) * 2);
+}
+
+@media (min-width: 62em) {
+  .main {
+    padding-bottom: var(--space-xl);
+  }
+}
