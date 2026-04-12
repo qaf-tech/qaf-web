@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-lg);
+}
+
+.card {
+  composes: surface from "@/styles/glass.module.css";
+  max-width: 40rem;
+  width: 100%;
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+}
+
+.stepIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+}
+
+.iconPending {
+  border: 1px solid var(--color-text-secondary);
+  background: transparent;
+}
+
+.iconInProgress {
+  border: 1px solid var(--color-primary);
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+.iconComplete {
+  background: var(--color-success);
+  color: #fff;
+}
+
+.iconError {
+  background: var(--color-error);
+  color: #fff;
+}
+
+.stepLabel {
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+}
+
+.connector {
+  width: 2px;
+  height: var(--space-lg);
+  background: var(--glass-border);
+  margin-left: 1.2rem;
+}
+
+.claimsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--glass-border);
+}
+
+.iconSvg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconInProgress {
+    animation: none;
+  }
+}
