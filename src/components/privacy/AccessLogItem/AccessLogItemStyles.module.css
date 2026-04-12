@@ -1,0 +1,81 @@
+.item {
+  padding: var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.accessor {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.credential {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.fact {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.timestamp {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  cursor: help;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  align-items: flex-end;
+}
+
+.revokeButton {
+  background: var(--glass-bg);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.revokeButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.revokedBadge {
+  background: var(--glass-bg);
+  color: var(--color-error);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.inlineError {
+  color: var(--color-error);
+  font-size: var(--font-size-xs);
+  margin: 0;
+}
+
+.spinner {
+  font-size: var(--font-size-sm);
+}
