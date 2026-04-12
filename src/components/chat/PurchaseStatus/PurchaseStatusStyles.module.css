@@ -1,0 +1,79 @@
+.container {
+  align-self: flex-start;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 80%;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  animation: fadeIn 0.2s ease;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.iconPending {
+  color: var(--color-text-secondary);
+}
+
+.iconInProgress {
+  color: var(--color-primary);
+  animation: spin 1s linear infinite;
+}
+
+.iconCompleted {
+  color: var(--color-success);
+}
+
+.iconFailed {
+  color: var(--color-error);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.detail {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-left: var(--space-xs);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step {
+    animation: none;
+  }
+
+  .iconInProgress {
+    animation: none;
+  }
+}

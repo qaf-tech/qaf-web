@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+}
+
+.textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  background: transparent;
+  font-size: var(--font-size-md);
+  font-family: var(--font-family);
+  color: var(--color-text);
+  line-height: 1.5;
+  outline: none;
+  min-height: 2.4rem;
+  max-height: 9.6rem;
+  overflow-y: auto;
+}
+
+.textarea::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.sendButton {
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.sendButton svg {
+  width: 2rem;
+  height: 2rem;
+  fill: rgb(255, 255, 255);
+}
+
+.sendButtonDisabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

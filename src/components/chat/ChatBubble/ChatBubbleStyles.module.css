@@ -1,0 +1,54 @@
+.bubble {
+  max-width: 80%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.user {
+  align-self: flex-end;
+  background: var(--color-primary);
+  color: rgb(255, 255, 255);
+  border-radius: var(--glass-radius) var(--glass-radius) var(--radius-sm)
+    var(--glass-radius);
+}
+
+.agent {
+  align-self: flex-start;
+  border-radius: var(--glass-radius) var(--glass-radius) var(--glass-radius)
+    var(--radius-sm);
+}
+
+.error {
+  border-left: 0.3rem solid var(--color-error);
+}
+
+.success {
+  border-left: 0.3rem solid var(--color-success);
+}
+
+.timestamp {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.retryButton {
+  background: none;
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  margin-top: var(--space-xs);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.retryIcon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
