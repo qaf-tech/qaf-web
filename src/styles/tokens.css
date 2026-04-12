@@ -1,0 +1,80 @@
+:root {
+  --color-primary: #6c5ce7;
+  --color-secondary: #00b894;
+  --color-accent: #fdcb6e;
+  --color-success: #00b894;
+  --color-warning: #fdcb6e;
+  --color-error: #e17055;
+  --color-text: #1a1a2e;
+  --color-text-secondary: #636e72;
+  --color-background: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-border: rgba(0, 0, 0, 0.08);
+
+  --space-xs: 0.4rem;
+  --space-sm: 0.8rem;
+  --space-md: 1.6rem;
+  --space-lg: 2.4rem;
+  --space-xl: 3.2rem;
+  --space-2xl: 4.8rem;
+
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+  --radius-lg: 1.6rem;
+  --radius-xl: 2.4rem;
+  --radius-full: 9999px;
+
+  --font-family: var(--font-geist-sans), system-ui, sans-serif;
+  --font-family-mono: var(--font-geist-mono), monospace;
+  --font-size-xs: 1.2rem;
+  --font-size-sm: 1.4rem;
+  --font-size-md: 1.6rem;
+  --font-size-lg: 2rem;
+  --font-size-xl: 2.4rem;
+  --font-size-2xl: 3.2rem;
+  --font-size-3xl: 4rem;
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+  --glass-bg: rgba(255, 255, 255, 0.12);
+  --glass-bg-hover: rgba(255, 255, 255, 0.18);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 0.8rem 3.2rem rgba(0, 0, 0, 0.12);
+  --glass-blur: 2rem;
+  --glass-radius: 1.6rem;
+  --glass-saturation: 180%;
+}
+
+[data-theme="dark"] {
+  --color-text: #f8f9fa;
+  --color-text-secondary: #b2bec3;
+  --color-background: #0f0f1a;
+  --color-surface: #1a1a2e;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(0, 0, 0, 0.25);
+  --glass-bg-hover: rgba(0, 0, 0, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 0.8rem 3.2rem rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-text: #f8f9fa;
+    --color-text-secondary: #b2bec3;
+    --color-background: #0f0f1a;
+    --color-surface: #1a1a2e;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(0, 0, 0, 0.25);
+    --glass-bg-hover: rgba(0, 0, 0, 0.35);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 0.8rem 3.2rem rgba(0, 0, 0, 0.3);
+  }
+}
