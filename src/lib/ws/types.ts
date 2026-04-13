@@ -29,6 +29,8 @@ export type WsMessageType =
   | "identity.mint_credential:response"
   | "identity.verify_proof"
   | "identity.verify_proof:response"
+  | `dex.${string}`
+  | `dex:${string}`
   | "system:connected"
   | "system:error";
 
