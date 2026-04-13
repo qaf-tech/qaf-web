@@ -105,3 +105,13 @@
   text-decoration: none;
   font-weight: 600;
 }
+
+.sellButton {
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.transferButton {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}

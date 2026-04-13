@@ -85,4 +85,47 @@ describe("AssetDetail", () => {
       screen.getByRole("button", { name: /Revoke Concert Ticket/ }),
     ).toBeTruthy();
   });
+
+  test("renders Sell button with aria-label='Sell this asset' when onSell provided", async () => {
+    const onSell = mock(() => undefined);
+    const { AssetDetail } = await import("./AssetDetail");
+    render(<AssetDetail asset={asset} onSell={onSell} />);
+    const btn = screen.getByRole("button", { name: "Sell this asset" });
+    expect(btn).toBeTruthy();
+  });
+
+  test("Sell button calls onSell when clicked", async () => {
+    const onSell = mock(() => undefined);
+    const { AssetDetail } = await import("./AssetDetail");
+    render(<AssetDetail asset={asset} onSell={onSell} />);
+    (screen.getByRole("button", { name: "Sell this asset" }) as HTMLElement).click();
+    expect(onSell).toHaveBeenCalled();
+  });
+
+  test("renders Send to friend button with aria-label when onTransfer provided", async () => {
+    const { AssetDetail } = await import("./AssetDetail");
+    render(<AssetDetail asset={asset} onTransfer={() => undefined} />);
+    expect(
+      screen.getByRole("button", { name: "Send this asset to a friend" }),
+    ).toBeTruthy();
+  });
+
+  test("Send to friend button calls onTransfer when clicked", async () => {
+    const onTransfer = mock(() => undefined);
+    const { AssetDetail } = await import("./AssetDetail");
+    render(<AssetDetail asset={asset} onTransfer={onTransfer} />);
+    (screen.getByRole("button", {
+      name: "Send this asset to a friend",
+    }) as HTMLElement).click();
+    expect(onTransfer).toHaveBeenCalled();
+  });
+
+  test("does not render Sell/Send buttons when callbacks not provided", async () => {
+    const { AssetDetail } = await import("./AssetDetail");
+    render(<AssetDetail asset={asset} />);
+    expect(screen.queryByRole("button", { name: "Sell this asset" })).toBeNull();
+    expect(
+      screen.queryByRole("button", { name: "Send this asset to a friend" }),
+    ).toBeNull();
+  });
 });

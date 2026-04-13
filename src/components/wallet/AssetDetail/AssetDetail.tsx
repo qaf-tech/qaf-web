@@ -45,7 +45,11 @@ function MetadataList({ metadata }: { metadata: Asset["metadata"] }) {
   );
 }
 
-export function AssetDetail({ asset }: AssetDetailProps): React.JSX.Element {
+export function AssetDetail({
+  asset,
+  onSell,
+  onTransfer,
+}: AssetDetailProps): React.JSX.Element {
   return (
     <article className={`${glass.surface} ${styles.container}`}>
       <header className={styles.header}>
@@ -95,6 +99,26 @@ export function AssetDetail({ asset }: AssetDetailProps): React.JSX.Element {
         >
           Revoke
         </button>
+        {onSell ? (
+          <button
+            type="button"
+            className={`${styles.actionButton} ${styles.sellButton}`}
+            onClick={onSell}
+            aria-label="Sell this asset"
+          >
+            Sell
+          </button>
+        ) : null}
+        {onTransfer ? (
+          <button
+            type="button"
+            className={`${styles.actionButton} ${styles.transferButton}`}
+            onClick={onTransfer}
+            aria-label="Send this asset to a friend"
+          >
+            Send to friend
+          </button>
+        ) : null}
       </div>
     </article>
   );

@@ -3,6 +3,8 @@
 import { useRouter } from "next/navigation";
 import { use, useEffect, useState } from "react";
 import { AssetDetail } from "@/components/wallet/AssetDetail";
+import { SellBackFlow } from "@/components/wallet/SellBackFlow";
+import { TransferFlow } from "@/components/wallet/TransferFlow";
 import { useWebSocket } from "@/hooks/useWebSocket";
 import type { Asset } from "@/lib/models/asset";
 import glass from "@/styles/glass.module.css";
@@ -25,6 +27,8 @@ export default function AssetDetailPage({
   const [asset, setAsset] = useState<Asset | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showSellFlow, setShowSellFlow] = useState(false);
+  const [showTransferFlow, setShowTransferFlow] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -62,7 +66,25 @@ export default function AssetDetailPage({
           {error}
         </div>
       ) : asset ? (
-        <AssetDetail asset={asset} />
+        <AssetDetail
+          asset={asset}
+          onSell={() => setShowSellFlow(true)}
+          onTransfer={() => setShowTransferFlow(true)}
+        />
+      ) : null}
+
+      {asset && showSellFlow ? (
+        <SellBackFlow
+          asset={asset}
+          onClose={() => setShowSellFlow(false)}
+        />
+      ) : null}
+
+      {asset && showTransferFlow ? (
+        <TransferFlow
+          asset={asset}
+          onClose={() => setShowTransferFlow(false)}
+        />
       ) : null}
     </div>
   );
