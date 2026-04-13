@@ -1,0 +1,143 @@
+.container {
+  padding: var(--space-2xl);
+  text-align: center;
+  border-radius: var(--glass-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.checkmark {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto var(--space-lg);
+  position: relative;
+}
+
+.checkmarkCircle {
+  stroke: var(--color-success);
+  stroke-width: 0.2rem;
+  fill: none;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: checkmarkCircle var(--transition-slow) ease-out forwards;
+}
+
+.checkmarkPath {
+  stroke: var(--color-success);
+  stroke-width: 0.3rem;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: checkmarkPath var(--transition-slow) ease-out 0.3s forwards;
+}
+
+@keyframes checkmarkCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes checkmarkPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: var(--radius-full);
+  top: 50%;
+  left: 50%;
+  animation: particleBurst var(--transition-slow) ease-out forwards;
+}
+
+.particlePrimary {
+  background: var(--color-primary);
+}
+
+.particleSuccess {
+  background: var(--color-success);
+}
+
+@keyframes particleBurst {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform:
+      translate(
+        calc(cos(var(--angle)) * 4rem),
+        calc(sin(var(--angle)) * 4rem)
+      )
+      scale(0.5);
+    opacity: 0;
+  }
+}
+
+.message {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.amount {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.recipientAddress {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  font-family: monospace;
+  margin-bottom: var(--space-lg);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+.walletButton {
+  color: var(--color-primary);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary);
+  cursor: pointer;
+  background: var(--glass-bg);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.explorerLink {
+  color: var(--color-text-secondary);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  text-decoration: none;
+  background: var(--glass-bg);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .checkmarkCircle,
+  .checkmarkPath {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .particle {
+    animation: none;
+    opacity: 0;
+  }
+}

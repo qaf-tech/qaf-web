@@ -1,0 +1,106 @@
+.container {
+  padding: var(--space-lg);
+  border-radius: var(--glass-radius);
+}
+
+.assetInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.assetIcon {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-lg);
+}
+
+.assetText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.assetTitle {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.assetIssuer {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.badge {
+  font-size: var(--font-size-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  color: var(--color-primary);
+  align-self: flex-start;
+}
+
+.priceDisplay {
+  text-align: center;
+  margin: var(--space-xl) 0;
+}
+
+.price {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.priceLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+.cancelButton {
+  color: var(--color-text-secondary);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  background: var(--glass-bg);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.cancelButton:hover {
+  background: var(--glass-bg-hover);
+}
+
+.confirmButton {
+  color: var(--color-primary);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary);
+  cursor: pointer;
+  background: var(--glass-bg);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.confirmButton:hover {
+  background: var(--glass-bg-hover);
+}
